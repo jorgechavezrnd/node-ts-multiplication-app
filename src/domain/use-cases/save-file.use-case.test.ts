@@ -12,11 +12,13 @@ describe('SaveFileUseCase', () => {
   const customFilePath = `${customOptions.fileDestination}/${customOptions.fileName}.txt`;
 
   afterEach(() => {
+
     const outputsFolderExists = fs.existsSync('outputs');
     if (outputsFolderExists) fs.rmSync('outputs', { recursive: true });
 
     const customOutputsFolderExists = fs.existsSync(customOptions.fileDestination);
     if (customOutputsFolderExists) fs.rmSync(customOptions.fileDestination, { recursive: true });
+
   });
 
   test('should save file with default values', () => {
